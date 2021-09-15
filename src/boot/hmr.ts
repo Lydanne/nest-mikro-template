@@ -1,6 +1,7 @@
 export default (app) => {
-  if (module.hot) {
-    module.hot.accept();
-    module.hot.dispose(() => app.close());
+  const _module = module as any;
+  if (_module.hot) {
+    _module.hot.accept();
+    _module.hot.dispose(() => app.close());
   }
 };

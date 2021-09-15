@@ -28,9 +28,18 @@ export function readEnvVar<T>(name: string, defaultValue: T): T {
   return type(value);
 }
 
-global.env = env;
-global.readEnvVar = readEnvVar;
-global.__PROP__ = __PROD__;
-global.__DEV__ = __DEV__;
-global.__TEST__ = __TEST__;
-global.__LOCAL__ = __LOCAL__;
+defineGlobalProp('env', env);
+defineGlobalProp('readEnvVar', readEnvVar);
+defineGlobalProp('__PROP__', __PROD__);
+defineGlobalProp('__DEV__', __DEV__);
+defineGlobalProp('__TEST__', __TEST__);
+defineGlobalProp('__LOCAL__', __LOCAL__);
+
+function defineGlobalProp(key, value) {
+  if (global) {
+    global[key] = value;
+  }
+  if (globalThis) {
+    globalThis[key] = value;
+  }
+}

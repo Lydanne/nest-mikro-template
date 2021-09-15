@@ -1,6 +1,3 @@
-declare const module: any;
-declare const global: any;
-
 declare type Env = 'local' | 'dev' | 'prod' | 'test';
 declare function readEnvVar<T>(name: string, defaultValue: T): T;
 declare const env: () => Env;

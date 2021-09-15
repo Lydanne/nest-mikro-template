@@ -17,6 +17,7 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
       "@api-sdk/api-sdk": ["libs/api-sdk/src"],
       "@api-sdk/api-sdk/*": ["libs/api-sdk/src/*"]
@@ -28,6 +29,16 @@
     "test/**/*.d.ts",
     "test/**/*.ts",
     "libs/**/*.d.ts",
-    "libs/**/*.ts"
-  ]
+    "libs/**/*.ts",
+    "types/**/*.d.ts",
+    "types/**/*.ts"
+  ],
+  "ts-node": {
+    "transpileOnly": false,
+    "files": true,
+    "cwd": "./",
+    "projectSearchDir": "./",
+    "project": "./tsconfig.json",
+    "require": ["tsconfig-paths/register"]
+  }
 }
