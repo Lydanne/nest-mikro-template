@@ -101,6 +101,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## Env File
+
+```
+.env        通用环境变量文件，所有环境生效，相同变量会被下面环境覆盖
+.env.local  本地环境生效
+.env.dev    预发环境生效
+.env.prod   生产环境生效
+```
+
+> 提示：
+> 需要在生产环境的服务器设置 NODE_ENV 环境变量为 prod 才能正确识别环境
+> 需要在预发环境的服务器设置 NODE_ENV 环境变量为 dev 才能正确识别环境
+> 如果不设置默认为本地环境
+
 ## Support
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
