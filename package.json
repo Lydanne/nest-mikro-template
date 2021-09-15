@@ -18,7 +18,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@mikro-orm/core": "^4.5.9",
@@ -52,7 +53,9 @@
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "husky": "^7.0.2",
     "jest": "^27.0.6",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
     "run-script-webpack-plugin": "^0.0.11",
     "supertest": "^6.1.3",
@@ -63,6 +66,13 @@
     "typescript": "^4.3.5",
     "webpack": "^5.52.1",
     "webpack-node-externals": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "eslint \"{src,apps,libs,test}/**/*.ts\"",
+      "git add -f"
+    ]
   },
   "jest": {
     "moduleFileExtensions": [
