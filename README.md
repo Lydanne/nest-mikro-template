@@ -42,6 +42,7 @@
 - [x] E2E 测试
 - [x] 支持 VSCode 单元测试
 - [ ] 支持 GitHook 自动 Prettier 格式化, 自动 ESlint 校验
+- [ ] 无需编译直接运行模式（实验）
 
 ## VSCode Plugin Installation
 
