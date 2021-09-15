@@ -22,5 +22,12 @@
       "@api-sdk/api-sdk/*": ["libs/api-sdk/src/*"]
     }
   },
-  "include": ["src/**/*.d.ts", "src/**/*.ts", "test/**/*.d.ts", "test/**/*.ts"]
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "test/**/*.d.ts",
+    "test/**/*.ts",
+    "libs/**/*.d.ts",
+    "libs/**/*.ts"
+  ]
 }
