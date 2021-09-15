@@ -1,0 +1,17 @@
+{
+  "moduleFileExtensions": [
+    "js",
+    "json",
+    "ts"
+  ],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "@api-sdk/api-sdk/(.*)": "<rootDir>/../libs/api-sdk/src/$1",
+    "@api-sdk/api-sdk": "<rootDir>/../libs/api-sdk/src"
+  }
+}
