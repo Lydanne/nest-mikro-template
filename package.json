@@ -35,6 +35,7 @@
     "@nestjs/swagger": "^5.0.9",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
+    "dotenv-conversion": "^1.6.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
