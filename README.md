@@ -41,7 +41,7 @@
 - [x] 单元测试
 - [x] E2E 测试
 - [x] 支持 VSCode 单元测试
-- [x] 支持 GitHook 自动 Prettier 格式化, 自动 ESlint 校验
+- [x] 支持 GitHook 自动 Prettier 格式化, 自动 ESlint 校验，自动校验 Commit
 - [x] 无需编译直接运行模式（实验）
 
 ## VSCode Plugin Installation
@@ -115,6 +115,36 @@ $ npm run test:cov
 > 需要在生产环境的服务器设置 NODE_ENV 环境变量为 prod 才能正确识别环境
 > 需要在预发环境的服务器设置 NODE_ENV 环境变量为 dev 才能正确识别环境
 > 如果不设置默认为本地环境
+
+## Commit Lint
+```
+type(scope?): subject
+```
+### type
+
+表示提交的类型
+
+```
+  'build',    打包构建之后
+  'chore',    修改配置或者修改文件名等，相当于是其他
+  'ci',       修改CI后  
+  'docs',     修改文档后
+  'feat',     新的特性
+  'fix',      修复bug
+  'perf',     性能优化
+  'refactor', 重构
+  'revert',   重新提交
+  'style',    样式相关
+  'test'      测试相关
+```
+
+### scope
+
+表示模块
+
+### subject
+
+做的事情
 
 ## Support
 
