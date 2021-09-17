@@ -28,7 +28,7 @@ export function readEnvVar<T>(name: string, defaultValue: T): T {
 }
 
 defineGlobalProp('env', env);
-defineGlobalProp('readEnvVar', readEnvVar);
+defineGlobalProp('e', readEnvVar);
 defineGlobalProp('__PROP__', __PROD__);
 defineGlobalProp('__DEV__', __DEV__);
 defineGlobalProp('__TEST__', __TEST__);
