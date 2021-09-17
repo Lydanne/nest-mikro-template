@@ -42,6 +42,8 @@
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@commitlint/config-conventional": "^13.1.0",
     "@mikro-orm/cli": "^4.5.9",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
