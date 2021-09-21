@@ -19,8 +19,7 @@
     "noFallthroughCasesInSwitch": false,
     "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@api-sdk/api-sdk": ["libs/api-sdk/src"],
-      "@api-sdk/api-sdk/*": ["libs/api-sdk/src/*"]
+      "@/": ["./src/"]
     }
   },
   "include": [
