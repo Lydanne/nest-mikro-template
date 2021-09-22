@@ -1,6 +1,6 @@
-import { Options } from '@mikro-orm/core';
 import { SqlHighlighter } from '@mikro-orm/sql-highlighter';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
+import { MikroOrmModuleSyncOptions } from '@mikro-orm/nestjs';
 
 export default () => {
   return {
@@ -17,7 +17,8 @@ export default () => {
       debug: e('MONGO_DEBUG', false),
       highlighter: new SqlHighlighter(),
       metadataProvider: TsMorphMetadataProvider,
-    } as Options,
+      autoLoadEntities: true,
+    } as MikroOrmModuleSyncOptions,
     // more config ...
   };
 };
