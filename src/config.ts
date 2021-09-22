@@ -1,6 +1,9 @@
 import { SqlHighlighter } from '@mikro-orm/sql-highlighter';
 import { TsMorphMetadataProvider } from '@mikro-orm/reflection';
 import { MikroOrmModuleSyncOptions } from '@mikro-orm/nestjs';
+import { Logger } from '@nestjs/common';
+
+const logger = new Logger('MikroORM');
 
 export default () => {
   return {
@@ -18,6 +21,7 @@ export default () => {
       highlighter: new SqlHighlighter(),
       metadataProvider: TsMorphMetadataProvider,
       autoLoadEntities: true,
+      logger: logger.log.bind(logger),
     } as MikroOrmModuleSyncOptions,
     // more config ...
   };
