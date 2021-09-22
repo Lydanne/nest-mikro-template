@@ -1,5 +1,5 @@
 import * as dotenv from 'dotenv';
-import * as dotenvExpand from 'dotenv-expand';
+import dotenvExpand from 'dotenv-expand';
 import dotenvConversion from 'dotenv-conversion';
 
 export const __PROD__ = process.env.NODE_ENV === 'prod'; // 是否为生产环境
