@@ -3,7 +3,7 @@
   "sourceRoot": "src",
   "projects": {},
   "compilerOptions": {
-    "webpack": true,
+    "webpack": false,
     "plugins": [
       {
         "name": "@nestjs/swagger",
