@@ -31,7 +31,8 @@
     "libs/**/*.d.ts",
     "libs/**/*.ts",
     "types/**/*.d.ts",
-    "types/**/*.ts"
+    "types/**/*.ts",
+    "mikro-orm.config.ts"
   ],
   "ts-node": {
     "transpileOnly": false,

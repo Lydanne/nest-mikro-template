@@ -8,9 +8,9 @@ export default () => {
     orm: {
       type: 'mongo',
       host: e('MONGO_HOST', 'localhost'),
-      port: e('MONGO_PORT', 3306),
+      port: e('MONGO_PORT', 27017),
       user: e('MONGO_USER', 'root'),
-      password: e('MONGO_PASSWORD', '12345678'),
+      password: e('MONGO_PASSWORD', ''),
       dbName: e('MONGO_DB_NAME', 'test'),
       entities: ['dist/**/*.entity.js'],
       entitiesTs: ['src/**/*.entity.ts'],
