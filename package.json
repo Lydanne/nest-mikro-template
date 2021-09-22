@@ -99,9 +99,7 @@
       "<rootDir>/src/",
       "<rootDir>/libs/"
     ],
-    "moduleNameMapper": {
-      "^@api-sdk/api-sdk(|/.*)$": "<rootDir>/libs/api-sdk/src/$1"
-    }
+    "moduleNameMapper": {}
   },
   "mikro-orm": {
     "useTsNode": true,
