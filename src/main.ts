@@ -15,7 +15,7 @@ async function bootstrap() {
     prefix: 'v',
   });
 
-  app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: true }));
+  app.useGlobalPipes(new ValidationPipe({ transform: true, whitelist: false }));
 
   swagger(app);
   hmr(app);
