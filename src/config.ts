@@ -10,11 +10,7 @@ export default () => {
     port: e('PORT', 3000),
     orm: {
       type: 'mongo',
-      host: e('MONGO_HOST', 'localhost'),
-      port: e('MONGO_PORT', 27017),
-      user: e('MONGO_USER', 'root'),
-      password: e('MONGO_PASSWORD', ''),
-      dbName: e('MONGO_DB_NAME', 'test'),
+      clientUrl: e('MONGO_CLIENT_URL', ''),
       entities: ['dist/**/*.entity.js'],
       entitiesTs: ['src/**/*.entity.ts'],
       debug: e('MONGO_DEBUG', false),
