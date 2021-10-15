@@ -14,7 +14,7 @@ export const __LOCAL__ = !__TEST__ && !__PROD__ && !__DEV__; // 是否为本地�
 export const env = () =>
   ({ prod: 'prod', dev: 'dev', test: 'test' }[process.env.NODE_ENV] ?? 'local');
 
-const envStore = loadEnvFiles(['.env.' + env(), '.env']);
+const envStore = loadEnvFiles(['.env.' + env(), '.env']); // 前面的优先级大于后面的
 
 /**
  * 读取环境变量
@@ -23,8 +23,10 @@ const envStore = loadEnvFiles(['.env.' + env(), '.env']);
  * @returns 读取的环境变量
  */
 export function readEnvVar<T>(name: string, defaultValue: T): T {
-  const value = envStore[name] ?? defaultValue;
-  return value;
+  return transformValue(
+    envStore[name] ?? process.env[name] ?? defaultValue,
+    typeof defaultValue,
+  );
 }
 
 defineGlobalProp('env', env);
@@ -55,4 +57,13 @@ function loadEnvFiles(paths = []) {
   }
 
   return ret;
+}
+
+function transformValue(value, type: string) {
+  const transformFunction = {
+    string: (val) => String(val),
+    number: (val) => Number(val),
+    boolean: (val) => val === 'true',
+  };
+  return transformFunction[type](value);
 }
