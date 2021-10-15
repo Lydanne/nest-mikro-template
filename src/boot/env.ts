@@ -67,5 +67,8 @@ function transformValue(value, type: string) {
     number: (val) => Number(val),
     boolean: (val) => val === 'true',
   };
+  if (!transformFunction[type]) {
+    return value;
+  }
   return transformFunction[type](value);
 }
