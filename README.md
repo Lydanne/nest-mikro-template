@@ -36,13 +36,13 @@
 - [ ] 自动生成 API 接口调用
 - [x] 识别环境（prod 生产, dev 预发, local 本地开发, ..）
 - [x] 自动加载环境变量
-- [x] 热重载（HMR）
+- [ ] 热重载（HMR）
 - [x] API 版本管理（URL 方式）
 - [x] 单元测试
 - [x] E2E 测试
 - [x] 支持 VSCode 单元测试
 - [x] 支持 GitHook 自动 Prettier 格式化, 自动 ESlint 校验，自动校验 Commit
-- [x] 无需编译直接运行模式（实验）
+- [x] 无需编译直接运行模式（实验）`npm run start:native`
 
 ## VSCode Plugin Installation
 
