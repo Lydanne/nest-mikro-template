@@ -2,17 +2,19 @@ import * as dotenv from 'dotenv';
 import dotenvExpand from 'dotenv-expand';
 import dotenvConversion from 'dotenv-conversion';
 
-export const __PROD__ = process.env.NODE_ENV === 'prod'; // 是否为生产环境
-export const __DEV__ = process.env.NODE_ENV === 'dev'; // 是否为预发环境
-export const __TEST__ = process.env.NODE_ENV === 'test'; // 是否为测试环境
-export const __LOCAL__ = !__TEST__ && !__PROD__ && !__DEV__; // 是否为本地环境
-
 /**
  * 获取当前环境
  * @returns current environment identification (prod、dev、test、local)
  */
 export const env = () =>
-  ({ prod: 'prod', dev: 'dev', test: 'test' }[process.env.NODE_ENV] ?? 'local');
+  ({ prod: 'prod', production: 'prod', dev: 'dev', test: 'test' }[
+    process.env.NODE_ENV
+  ] ?? 'local');
+
+export const __PROD__ = env() === 'prod'; // 是否为生产环境
+export const __DEV__ = env() === 'dev'; // 是否为预发环境
+export const __TEST__ = env() === 'test'; // 是否为测试环境
+export const __LOCAL__ = env() === 'local'; // 是否为本地环境
 
 const envStore = loadEnvFiles(['.env.' + env(), '.env']); // 前面的优先级大于后面的
 
