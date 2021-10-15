@@ -10,7 +10,7 @@ export default () => {
     port: e('PORT', 3000),
     orm: {
       type: 'mongo',
-      clientUrl: e('MONGO_CLIENT_URL', ''),
+      clientUrl: e('MONGO_CLIENT_URL', 'mongodb://localhost/hello-nest'),
       entities: ['dist/**/*.entity.js'],
       entitiesTs: ['src/**/*.entity.ts'],
       debug: e('MONGO_DEBUG', false),
