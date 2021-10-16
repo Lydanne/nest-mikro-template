@@ -96,6 +96,14 @@ $ npm run test:cov
 > 需要在预发环境的服务器设置 NODE_ENV 环境变量为 dev 才能正确识别环境
 > 如果不设置默认为本地环境
 
+## Preset Environment Variables
+
+```
+MONGO_DEBUG = false # 是否开启MikroORM Debug
+MONGO_CLIENT_URL = mongodb://localhost/hello # MONGO 链接地址
+
+```
+
 ## Commit Lint
 
 ```
