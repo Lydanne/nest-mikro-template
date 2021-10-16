@@ -75,7 +75,6 @@
   "lint-staged": {
     "*.ts": [
       "prettier --write",
-      "eslint \"{src,apps,libs,test}/**/*.ts\"",
       "git add -f"
     ]
   },
