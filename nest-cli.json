@@ -1,24 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/nest-cli",
   "collection": "@nestjs/schematics",
-  "sourceRoot": "apps/nest-mikro-template/src",
+  "sourceRoot": "apps/app/src",
   "compilerOptions": {
     "deleteOutDir": true,
     "webpack": true,
-    "tsConfigPath": "apps/nest-mikro-template/tsconfig.app.json"
+    "tsConfigPath": "apps/app/tsconfig.app.json",
+    "plugins": [
+      {
+        "name": "@nestjs/swagger",
+        "options": {
+          "classValidatorShim": true,
+          "introspectComments": true
+        }
+      }
+    ]
   },
   "monorepo": true,
-  "root": "apps/nest-mikro-template",
+  "root": "apps/app",
   "projects": {
-    "nest-mikro-template": {
-      "type": "application",
-      "root": "apps/nest-mikro-template",
-      "entryFile": "main",
-      "sourceRoot": "apps/nest-mikro-template/src",
-      "compilerOptions": {
-        "tsConfigPath": "apps/nest-mikro-template/tsconfig.app.json"
-      }
-    },
     "app": {
       "type": "application",
       "root": "apps/app",
@@ -28,15 +28,6 @@
         "tsConfigPath": "apps/app/tsconfig.app.json"
       }
     },
-    "redis": {
-      "type": "library",
-      "root": "libs/redis",
-      "entryFile": "index",
-      "sourceRoot": "libs/redis/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/redis/tsconfig.lib.json"
-      }
-    },
     "boot": {
       "type": "library",
       "root": "libs/boot",
@@ -44,15 +35,6 @@
       "sourceRoot": "libs/boot/src",
       "compilerOptions": {
         "tsConfigPath": "libs/boot/tsconfig.lib.json"
-      }
-    },
-    "config": {
-      "type": "library",
-      "root": "libs/config",
-      "entryFile": "index",
-      "sourceRoot": "libs/config/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/config/tsconfig.lib.json"
       }
     }
   }
