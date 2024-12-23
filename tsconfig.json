@@ -5,9 +5,8 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
@@ -18,28 +17,25 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "typeRoots": ["./node_modules/@types", "./types"],
     "paths": {
-      "@/": ["./src/"]
+      "@app/redis": [
+        "libs/redis/src"
+      ],
+      "@app/redis/*": [
+        "libs/redis/src/*"
+      ],
+      "@app/boot": [
+        "libs/boot/src"
+      ],
+      "@app/boot/*": [
+        "libs/boot/src/*"
+      ],
+      "@app/config": [
+        "libs/config/src"
+      ],
+      "@app/config/*": [
+        "libs/config/src/*"
+      ]
     }
-  },
-  "include": [
-    "src/**/*.d.ts",
-    "src/**/*.ts",
-    "test/**/*.d.ts",
-    "test/**/*.ts",
-    "libs/**/*.d.ts",
-    "libs/**/*.ts",
-    "types/**/*.d.ts",
-    "types/**/*.ts",
-    "mikro-orm.config.ts"
-  ],
-  "ts-node": {
-    "transpileOnly": false,
-    "files": true,
-    "cwd": "./",
-    "projectSearchDir": "./",
-    "project": "./tsconfig.json",
-    "require": ["tsconfig-paths/register"]
   }
 }
